@@ -7,6 +7,6 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#ed4040",
     "navigationBarTitleText": "Demo",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"#fff"
   }
 }

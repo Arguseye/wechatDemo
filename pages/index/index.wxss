@@ -31,7 +31,7 @@
   /*align-items: center;
   justify-content: center;*/
   text-align: center;
-  width: 150px;
+  width: 80px;
   height: 38px;
   line-height: 38px;
   font-size: 12px;

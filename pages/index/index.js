@@ -5,6 +5,7 @@ const app = getApp()
 Page({
   data: {
     motto: 'Hello World',
+    tabs: [],
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -16,6 +17,14 @@ Page({
     })
   },
   onLoad: function () {
+
+    // init tabs
+    if (app.globalData.tabs) {
+      this.setData({
+        tabs: app.globalData.tabs
+      })
+    }
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

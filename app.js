@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
+    tabs: ['推荐', '视频', '热点', '本地', '科技', '娱乐'],
     userInfo: null
   }
 })
