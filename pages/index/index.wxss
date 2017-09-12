@@ -1,0 +1,39 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.m-list {
+  white-space: nowrap;
+  display: flex;
+  border-bottom: 1px solid #efefef;
+}
+
+.m-list .item {
+  display: inline-block;
+  /*align-items: center;
+  justify-content: center;*/
+  text-align: center;
+  width: 150px;
+  height: 38px;
+  line-height: 38px;
+  font-size: 12px;
+  color: #333;
+}
