@@ -2,7 +2,7 @@
 <view class="container">
 
   <!--title tabs-->
-  <scroll-view scroll-x="true" class="m-list">
+  <scroll-view scroll-x class="m-list">
     <view 
       wx:for="{{tabs}}"
       wx:key="{{index}}"
@@ -14,7 +14,7 @@
   </scroll-view>
 
   <!--content lists-->
-  <scroll-view scroll-y="true" class="m-main-list">
+  <scroll-view scroll-y style="height: {{clientHeight}}" class="m-main-list">
       <view class="item">1</view>
       <view class="item">2</view>
       <view class="item">3</view>

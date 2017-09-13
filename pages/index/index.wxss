@@ -19,18 +19,18 @@
 .m-list {
   white-space: nowrap;
   display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: 1px solid #efefef;
 }
 
 .m-list .item {
   display: inline-block;
-  /*align-items: center;
-  justify-content: center;*/
   text-align: center;
   width: 80px;
   height: 38px;
   line-height: 38px;
-  font-size: 12px;
+  font-size: 14px;
   color: #333;
 }
 

@@ -6,6 +6,7 @@ Page({
   data: {
     tabs: [],
     activeTab: 0,
+    clientHeight: 'auto',
 
     userInfo: {},
     hasUserInfo: false,
@@ -31,6 +32,13 @@ Page({
         tabs: app.globalData.tabs
       })
     }
+
+    const that = this;
+    setTimeout(function() {
+      that.setData({
+        clientHeight: '300px'
+      })
+    }, 1000)
 
     if (app.globalData.userInfo) {
       this.setData({
