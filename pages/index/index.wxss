@@ -16,10 +16,6 @@
   color: #aaa;
 }
 
-.usermotto {
-  margin-top: 200px;
-}
-
 .m-list {
   white-space: nowrap;
   display: flex;
@@ -36,4 +32,16 @@
   line-height: 38px;
   font-size: 12px;
   color: #333;
+}
+
+.m-list .item.active {
+  color: #ed4040;
+}
+
+.m-main-list .item {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid #efefef;
 }

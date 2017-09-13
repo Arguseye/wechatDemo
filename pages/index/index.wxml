@@ -1,11 +1,24 @@
 <!--index.wxml-->
-<view class="container m-list">
+<view class="container">
 
-  <!--tabs-->
+  <!--title tabs-->
   <scroll-view scroll-x="true" class="m-list">
-    <view wx:for="{{tabs}}" wx:key="{{index}}" class="item">
+    <view 
+      wx:for="{{tabs}}"
+      wx:key="{{index}}"
+      bindtap="switchTab"
+      data-index="{{index}}"
+      class="item {{activeTab === index ? 'active' : ''}}">
       {{item}}
     </view>
+  </scroll-view>
+
+  <!--content lists-->
+  <scroll-view scroll-y="true" class="m-main-list">
+      <view class="item">1</view>
+      <view class="item">2</view>
+      <view class="item">3</view>
+      <view class="item">4</view>
   </scroll-view>
 
   <view class="userinfo">
@@ -14,8 +27,5 @@
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
   </view>
 </view>

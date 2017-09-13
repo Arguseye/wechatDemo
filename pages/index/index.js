@@ -4,8 +4,9 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
     tabs: [],
+    activeTab: 0,
+
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -15,6 +16,12 @@ Page({
     wx.navigateTo({
       url: '../logs/logs'
     })
+  },
+  switchTab: function(e) {
+    const ele = e.target.dataset;
+    this.setData({
+      activeTab: ele.index
+    });
   },
   onLoad: function () {
 
