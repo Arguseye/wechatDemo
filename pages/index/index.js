@@ -8,16 +8,52 @@ Page({
     activeTab: 0,
     clientHeight: 'auto',
 
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    mockListData: [
+      {
+        title: '奥委会官宣：2024年和2028年奥运主办正式确认！中国终于不用接锅',
+        info: '作者 时间'
+      }, {
+        title: '奥委会官宣：2024年和2028年奥运主办正式确认！中国终于不用接锅',
+        info: '作者 时间'
+      }, {
+        title: '奥委会官宣：2024年和2028年奥运主办正式确认！中国终于不用接锅',
+        info: '作者 时间'
+      }, {
+        title: '奥委会官宣：2024年和2028年奥运主办正式确认！中国终于不用接锅',
+        info: '作者 时间'
+      }, {
+        title: '奥委会官宣：2024年和2028年奥运主办正式确认！中国终于不用接锅',
+        info: '作者 时间'
+      }, {
+        title: '奥委会官宣：2024年和2028年奥运主办正式确认！中国终于不用接锅',
+        info: '作者 时间'
+      }, {
+        title: '奥委会官宣：2024年和2028年奥运主办正式确认！中国终于不用接锅',
+        info: '作者 时间'
+      }, {
+        title: '奥委会官宣：2024年和2028年奥运主办正式确认！中国终于不用接锅',
+        info: '作者 时间'
+      }, {
+        title: '奥委会官宣：2024年和2028年奥运主办正式确认！中国终于不用接锅',
+        info: '作者 时间'
+      }, {
+        title: '奥委会官宣：2024年和2028年奥运主办正式确认！中国终于不用接锅',
+        info: '作者 时间'
+      }
+    ]
   },
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
+
+  loadMore: function() {
+    console.log(123);
+  },
+
   switchTab: function(e) {
     const ele = e.target.dataset;
     this.setData({
@@ -25,6 +61,15 @@ Page({
     });
   },
   onLoad: function () {
+    const that = this;
+
+    wx.showLoading({
+      title: '加载中...'
+    })
+
+    setTimeout(function() {
+      wx.hideLoading()
+    }, 2000)
 
     // init tabs
     if (app.globalData.tabs) {
@@ -33,46 +78,13 @@ Page({
       })
     }
 
-    const that = this;
-    setTimeout(function() {
-      that.setData({
-        clientHeight: '300px'
-      })
-    }, 1000)
-
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+    // list height
+    wx.getSystemInfo({
+      success: function(res) {
+        that.setData({
+          clientHeight: (res.windowHeight - 39) + 'px'
         })
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
     })
   }
 })
